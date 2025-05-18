@@ -1,0 +1,36 @@
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+
+export function Pain(props) {
+  const { nodes, materials } = useGLTF('/Paint brush.glb')
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Circle005_1.geometry}
+        material={materials['80DEEA']}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Circle005_1_1.geometry}
+        material={materials['795548']}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Circle005_1_2.geometry}
+        material={materials['455A64']}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Circle005_1_3.geometry}
+        material={materials['039BE5']}
+      />
+    </group>
+  )
+}
+
+useGLTF.preload('/Paint brush.glb')
