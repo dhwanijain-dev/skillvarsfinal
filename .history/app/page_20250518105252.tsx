@@ -151,14 +151,14 @@ const keyboard = useLoader(GLTFLoader, "/keyboard.glb")
           </Canvas>
           <h1
             className={`great-vibes-regular absolute left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#1DCBE5] to-[#FF6B35] pt-2 pr-2 bg-clip-text text-transparent 
-      ${isMobile ? "text-3xl top-52 w-[90vw] text-center leading-tight" : "text-7xl -translate-y-1/2"}`}
+      ${isMobile ? "text-3xl top-32 w-[90vw] text-center leading-tight" : "text-7xl -translate-y-1/2"}`}
             style={isMobile ? { maxWidth: "95vw" } : {}}
           >
             Devistic
           </h1>
           <p
             className={`absolute left-1/2 -translate-x-1/2 
-      ${isMobile ? "text-base top-64 w-[90vw] text-center leading-snug break-words" : "text-3xl translate-y-1/2"}`}
+      ${isMobile ? "text-base top-32 w-[90vw] text-center leading-snug break-words" : "text-3xl translate-y-1/2"}`}
             style={isMobile ? { maxWidth: "95vw" } : {}}
           >
             Where Development meets Artistry
@@ -205,86 +205,82 @@ const keyboard = useLoader(GLTFLoader, "/keyboard.glb")
           </Canvas>
         </div>
       </div>
-        <div className={`sectionFive h-screen relative w-full flex flex-col items-center justify-center`}>
-          <h1 className={`text-7xl absolute top-10 left-1/2 -translate-x-1/2 great-vibes-regular ${isMobile ? "text-3xl w-full px-2 text-center" : ""}`}>
-            Contact Us
-          </h1>
-          <div className={`flex relative w-full h-screen justify-center items-center ${isMobile ? "flex-col px-4 py-8 gap-8" : "flex-row px-50"}`}>
-            <form className={`space-y-4 ${isMobile ? "w-full" : ""}`} onSubmit={handleSubmit}>
-              <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"} gap-4`}>
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-300">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-300">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Your email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
-                    required
-                  />
-                </div>
-              </div>
+      <div className="sectionFive h-screen relative w-full flex flex-col items-center justify-center" >
+        <h1 className="text-7xl absolute top-10 left-1/2 -translate-x-1/2 great-vibes-regular">Contact Us</h1>
+        <div className="flex relative w-full h-screen justify-center items-center px-50  ">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-gray-300">
-                  Subject
+                <label htmlFor="name" className="text-sm font-medium text-gray-300">
+                  Name
                 </label>
                 <Input
-                  id="subject"
-                  placeholder="What is this regarding?"
-                  value={formData.subject}
+                  id="name"
+                  placeholder="Your name"
+                  value={formData.name}
                   onChange={handleChange}
                   className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-300">
-                  Message
+                <label htmlFor="email" className="text-sm font-medium text-gray-300">
+                  Email
                 </label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message"
-                  rows={5}
-                  value={formData.message}
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Your email"
+                  value={formData.email}
                   onChange={handleChange}
                   className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
                   required
                 />
               </div>
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-              {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
-              {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
-            </form>
-            <iframe
-              className={`${isMobile ? "w-full h-64 mt-8" : "h-[80%] w-[80%] ml-8"}`}
-              src='https://my.spline.design/nexbotrobotcharacterconcept-3c2e5832dc847143bda8952d230b49ee/'
-              allowFullScreen
-            />
-          </div>
-          <div className={`bg-black h-20 w-50 absolute bottom-20 ${isMobile ? "left-1/2 -translate-x-1/2" : "right-50"}`}></div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="subject" className="text-sm font-medium text-gray-300">
+                Subject
+              </label>
+              <Input
+                id="subject"
+                placeholder="What is this regarding?"
+                value={formData.subject}
+                onChange={handleChange}
+                className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm font-medium text-gray-300">
+                Message
+              </label>
+              <Textarea
+                id="message"
+                placeholder="Your message"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                className="bg-gray-700/50 border-gray-600 focus:border-purple-500"
+                required
+              />
+            </div>
+            <Button
+              type="submit"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+            {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
+            {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
+          </form>
+          <iframe height='80%' width='80%' src='https://my.spline.design/nexbotrobotcharacterconcept-3c2e5832dc847143bda8952d230b49ee/' ></iframe>
         </div>
+        <div className="bg-black h-20 w-50 absolute bottom-20 right-50">
+
+        </div>
+      </div>
 
          </div>
     </div>
